@@ -1,35 +1,137 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
-
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
   </head>
+
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="page-scale">
+      <div class="page">
+        <header class="chrome" aria-label="Barra superior simulada">
+          <div class="chrome__tabs">
+            <div class="mac-dots" aria-hidden="true">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Pestañas">
+              <button class="tab" role="tab" aria-selected="false">ti</button>
+              <button class="tab" role="tab" aria-selected="false">a</button>
+              <button class="tab" role="tab" aria-selected="false">a</button>
+              <button class="tab tab--active" role="tab" aria-selected="true">x</button>
+              <button class="tab" role="tab" aria-selected="false">b</button>
+              <button class="tab" role="tab" aria-selected="false">B</button>
+              <button class="tab" role="tab" aria-selected="false">S</button>
+              <button class="tab" role="tab" aria-selected="false">H</button>
+              <button class="tab" role="tab" aria-selected="false">E</button>
+            </div>
+
+            <div class="profile">
+              <span class="profile__name">Alejandro US</span>
+            </div>
+          </div>
+
+          <div class="chrome__nav">
+            <div class="nav-left" aria-hidden="true">
+              <span class="nav-ico nav-ico--back"></span>
+              <span class="nav-ico nav-ico--forward"></span>
+              <span class="nav-ico nav-ico--reload"></span>
+            </div>
+
+            <div class="omnibox" role="group" aria-label="Barra de dirección">
+              <span class="lock" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M7 10V8a5 5 0 0 1 10 0v2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M6.5 10h11A1.5 1.5 0 0 1 19 11.5v8A2.5 2.5 0 0 1 16.5 22h-9A2.5 2.5 0 0 1 5 19.5v-8A1.5 1.5 0 0 1 6.5 10Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </span>
+
+              <span class="secure">Secure</span>
+              <span class="omnibox__divider" aria-hidden="true"></span>
+              <span class="url" id="urlText">https://assignment...</span>
+            </div>
+
+            <div class="nav-right" aria-hidden="true">
+              <span class="chip chip--plain">S</span>
+              <span class="chip chip--grid"></span>
+              <span class="chip chip--cors">CORS</span>
+              <span class="chip chip--green"></span>
+            </div>
+          </div>
+
+          <div class="chrome__bookmarks">
+            <div class="bm">
+              <span class="bm__ico bm__ico--folder" aria-hidden="true"></span>
+              <span class="bm__text">Clientes</span>
+            </div>
+
+            <div class="bm">
+              <span class="bm__ico bm__ico--gmail" aria-hidden="true">M</span>
+              <span class="bm__text">Gmail</span>
+            </div>
+
+            <div class="bm">
+              <span class="bm__ico bm__ico--crm" aria-hidden="true"></span>
+              <span class="bm__text">CRM</span>
+            </div>
+
+            <div class="bm">
+              <span class="bm__ico bm__ico--website" aria-hidden="true"></span>
+              <span class="bm__text">Website</span>
+            </div>
+
+            <div class="bm">
+              <span class="bm__ico bm__ico--breathe" aria-hidden="true"></span>
+              <span class="bm__text">BreatheCode</span>
+            </div>
+
+            <div class="bm bm--more" aria-hidden="true">»</div>
+          </div>
+        </header>
+
+        <main class="mesa">
+          <section class="panel" aria-label="Controles">
+            <button id="btnNew" type="button">Generar carta</button>
+
+            <label>
+              Ancho (px)
+              <input id="inputW" type="number" min="120" step="10" value="420" />
+            </label>
+
+            <label>
+              Alto (px)
+              <input id="inputH" type="number" min="160" step="10" value="640" />
+            </label>
+
+            <label class="chk">
+              <input id="autoToggle" type="checkbox" checked />
+              Auto cada 3s
+            </label>
+          </section>
+
+          <section class="zona-carta">
+            <div id="card" class="card spade" aria-label="Carta aleatoria">
+              <div id="topSuit" class="suit top">♠</div>
+              <div id="value" class="value">8</div>
+              <div id="bottomSuit" class="suit bottom">♠</div>
+            </div>
+          </section>
+        </main>
       </div>
     </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>
